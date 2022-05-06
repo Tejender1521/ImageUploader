@@ -1,0 +1,208 @@
+:root {
+    --size: 50px;
+    --radius: calc(var(--size) * 20 / 100);
+    background: #0f0f0f
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.App {
+    text-align: left;
+    /* background: #ebebeb; */
+}
+
+
+.post {
+    /* height: 200px;
+    background: rgb(255, 255, 255);
+    border-radius: 0.5rem;
+    box-shadow: rgb(0 0 0 / 26%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px;
+    width: 100%;
+    height: 50%; */
+    margin: 5rem 0;
+    text-align: center;
+}
+
+
+.metadata {
+    width: 60vw;
+    /* margin: auto; */
+    margin: 1rem auto;
+    display: flex;
+    text-align: initial;
+    /* margin-bottom: 0.5rem; */
+}
+
+.avatar { 
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+
+.avatar-container {
+    margin-right: 24px;
+}
+
+.image-card {
+    width: 60vw;
+    /* height: calc(60vw*1080/1920); */
+    border-radius: var(--radius);
+    position: relative; 
+    background-size: cover;
+    margin: auto;
+    /* margin: calc(var(--size) * 20 / 100); */
+}
+
+.image-card:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    background-size: cover;
+    border-radius: var(--radius);
+    z-index: -1;
+    filter: blur(12px);
+    opacity: 0.6;
+    left: 50%;
+    transform: translate(-50%, 1%);
+}
+
+.posted_by {
+    color: #fff;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.location {
+    color: #838383;
+}
+
+.container {
+    max-width: 100vw;
+    margin: auto;
+}
+
+.lds-ellipsis {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 1rem auto;
+}
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #ffffff69;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+.empty-state-container {
+    height: 69vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.empty-state {
+    margin: auto;
+    vertical-align: middle;
+    position: relative;
+    top: 50%;
+}
+
+button {
+    background: #5a67d8;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0.5em;
+    margin: 1em;
+    color: #ffffffb0;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .image-card, .metadata {
+        width: 90vw;
+    }
+    .posted_by {
+        font-size: initial;
+    }
+    .location {
+        font-size: 14px;
+    }
+    .avatar-container {
+        margin-right: 13px;
+    }
+    .post {
+        margin: 2.7rem 0;
+    }
+    .metadata{
+        margin-bottom: 0.5rem;
+    }
+    .avatar {
+        width: 30px;
+        height: 30px;
+        vertical-align: -webkit-baseline-middle;
+    }
+    .app-title {
+        font-size: 32px;
+    }
+    .app-desc {
+        font-size: 14px;
+    }
+  }
